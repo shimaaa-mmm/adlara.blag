@@ -1,33 +1,35 @@
+@import url('/assets/iran-sans-web/fontiran.css');
 @import "tailwindcss";
 
 @theme {
-  --font-iran: 'ARANSansx', sans-serif;
+  --font-iran: 'IRANSans', sans-serif;
 
   --color-background: #ffffff;
   --color-buttom: #e1f0f8;
   --color-titles: #000000;
   --color-title-buttom: #44618d;
-  --color-header-buttom: #ff9408;
-  --color-green: #14bc84;
+  --color-headerBtt: #ff9408;
+  --color-headerGee: #14bc84;
   --color-title-header: #4D5766;
+  --color-borderClr: #d2d2d2;
+  --color-textClr: rgb(28, 62, 117);
+  --color-borclr:rgb(222,240,252);
+  --color-hoverClr:#07b2b2;
+  --color-teXt:#4D5766;
 
-  /* Added border-color */
-  --color-border: rgb(211, 216, 223);
-  --border-right-width: 1px;
+
 }
 
-@font-face {
-  font-family: 'ARANSansx';
-  src: url('/fonts/ARANSansx.woff2') format('woff2'),
-       url('/fonts/ARANSansx.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+@layer base {
+  body {
+    @apply font-iran;
+  }
+
+  p {
+    @apply leading-8;
+  }
 }
 
-body {
-  @apply font-[var(--font-iran)];
-}
+
 
 /* Example of using the custom text-shadow */
-

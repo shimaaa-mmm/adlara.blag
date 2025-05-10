@@ -14,10 +14,10 @@ const ArticlesPage = () => {
       <div class="w-full ">
         <div class="flex flex-nowrap justify-center items-center gap-4 my-6 text-center min-w-[800px]">
           <button
-            class={`w-[249.067px] h-[57.3333px] text-base font-normal flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition-all duration-300 ease-in-out transform hover:scale-105 ${
+            class={`w-[249.067px] h-[57.3333px] text-base font-normal cursor-pointer flex items-center justify-center mx-2 rounded-3xl border border-borclr p-3 shadow transition-all duration-300 ease-in-out transform hover:scale-105 ${
               filter === "article"
                 ? "bg-blue-900 text-white scale-105"
-                : "bg-[#E1F0F8] text-[rgb(28,62,117)] hover:bg-[#07b2b2]"
+                : "bg-[#E1F0F8] text-textClr hover:bg-hoverClr"
             }`}
             onClick={() => setFilter("article")}
           >
@@ -28,10 +28,10 @@ const ArticlesPage = () => {
 
           <a href="/videos">
             <button
-              class={`w-[249.067px] h-[57.3333px] text-base font-normal flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition-all duration-300 ease-in-out transform hover:scale-105 ${
+              class={`w-[249.067px] h-[57.3333px] text-base font-normal cursor-pointer flex items-center justify-center mx-2 rounded-3xl border border-borclr p-3 shadow transition-all duration-300 ease-in-out transform hover:scale-105 ${
                 filter === "video"
                   ? "bg-blue-950 text-white scale-105"
-                  : "bg-[#E1F0F8] text-[rgb(28,62,117)] hover:bg-[#07b2b2]"
+                  : "bg-[#E1F0F8] text-textClr hover:bg-hoverClr"
               }`}
               onClick={() => setFilter("video")}
             >
@@ -44,10 +44,10 @@ const ArticlesPage = () => {
           <a href="/">
             {" "}
             <button
-              class={`w-[249.067px] h-[57.3333px] text-base font-normal flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition-all duration-300 ease-in-out transform hover:scale-105 ${
+              class={`w-[249.067px] h-[57.3333px] text-base font-normal cursor-pointer flex items-center justify-center mx-2 rounded-3xl border border-borclr p-3 shadow transition-all duration-300 ease-in-out transform hover:scale-105 ${
                 filter === "podcast"
                   ? "bg-blue-950 text-white scale-105"
-                  : "bg-[#E1F0F8] text-[rgb(28,62,117)] hover:bg-[#07b2b2]"
+                  : "bg-[#E1F0F8] text-textClr hover:bg-hoverClr"
               }`}
               onClick={() => setFilter("podcast")}
             >
@@ -65,7 +65,7 @@ const ArticlesPage = () => {
         {filteredPosts.slice(0, 12).map(({ ids, images, titles, dates }) => (
           <div
             key={ids}
-            className="rounded-xl overflow-hidden relative w-full max-w-[366px] h-[332px]  shadow hover:shadow-lg transition"
+            className="rounded-xl overflow-hidden relative w-full max-w-[366px] h-[332px] shadow hover:shadow-lg transition"
           >
             <img
               src={images}

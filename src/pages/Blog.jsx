@@ -15,13 +15,13 @@ const Blog = () => {
 
   return (
     <div class="p-4 max-w-[70rem] mx-auto" dir="rtl">
-      <h1 class="text-center text-xl leading-7 font-[inherit] my-8">
+      <h1 class="text-center text-xl leading-7 font-bold font-[inherit] my-8">
         آکادمی حقوق
       </h1>
 
       <div className="flex flex-wrap gap-1 justify-center my-6">
         <button
-          className={`w-[249.067px] h-[57.3333px] text-base font-normal flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition duration-300 ${
+          className={`w-[249.067px] h-[57.3333px] text-base font-normal cursor-pointer flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition duration-300 ${
             filter === "article"
               ? "bg-green-500 text-white"
               : "bg-[#E1F0F8] text-[rgb(28,62,117)] hover:bg-[#07b2b2]"
@@ -32,7 +32,7 @@ const Blog = () => {
         </button>
 
         <button
-          className={`w-[249.067px] h-[57.3333px] text-base font-normal flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition duration-300 ${
+          className={`w-[249.067px] h-[57.3333px] text-base font-normal cursor-pointer flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition duration-300 ${
             filter === "video"
               ? "bg-blue-950 text-white"
               : "bg-[#E1F0F8] text-[rgb(28,62,117)] hover:bg-[#07b2b2]"
@@ -44,7 +44,7 @@ const Blog = () => {
         </button>
 
         <button
-          className={`w-[249.067px] h-[57.3333px] text-base font-normal flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition duration-300 ${
+          className={`w-[249.067px] h-[57.3333px] text-base font-normal cursor-pointer flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition duration-300 ${
             filter === "podcast"
               ? "bg-blue-950 text-white"
               : "bg-[#E1F0F8] text-[rgb(28,62,117)] hover:bg-[#07b2b2]"

@@ -26,7 +26,7 @@ const ArticleDetail = () => {
         <span>تاریخ: {article.dates}</span>
       </div>
 
-      <p class="text-base leading-[2.1] font-[IRANSansX] text-black mb-4 text-right border-b border-gray-300 pb-2">
+      <p class="text-base leading-[2.1] text-black mb-4 text-right border-b border-gray-300 pb-2">
         {article.descriptions}
       </p>
       <h2 class="inline-block m-2.5 p-2.5 bg-[#d9dce1] rounded-lg text-sm font-normal text-right ">
@@ -39,8 +39,8 @@ const ArticleDetail = () => {
             alt="تصویر اول"
             class="w-[366.933px] h-[322px] object-cover rounded-[20px]"
           />
-          <div class="absolute border border-[#d2d2d2] shadow-[0_0_4px_#d2d2d2] bg-[#9ca3af61] rounded-b-[16px] bottom-0 left-0 right-0 h-[61px] bg-[#fafafa73] text-white text-center px-2 rounded flex flex-col items-center justify-center">
-            <div class="text-black text-[12px] font-bold">
+          <div class="absolute border border-borderClr shadow-sm shadow-borderClr rounded-2xl bottom-0 left-0 right-0 h-[61px] bg-[#fafafa73] text-white text-center px-2 flex flex-col items-center justify-center">
+          <div class="text-black text-[12px] font-bold">
               {article.titles}
             </div>
             <div class="text-black text-[12px]">{article.dates}</div>
@@ -53,8 +53,8 @@ const ArticleDetail = () => {
             alt="تصویر دوم"
             class="w-[366.933px] h-[322px] object-cover rounded-[20px]"
           />
-          <div class="absolute bottom-0 border border-[#d2d2d2] shadow-[0_0_4px_#d2d2d2] bg-[#9ca3af61] rounded-b-[16px] left-0 right-0 h-[61px] bg-[#fafafa73] text-white text-center px-2 rounded flex flex-col items-center justify-center">
-            <div class="text-black text-[12px] font-bold">
+          <div class="absolute border border-borderClr shadow-sm shadow-borderClr rounded-2xl bottom-0 left-0 right-0 h-[61px] bg-[#fafafa73] text-white text-center px-2 rounded flex flex-col items-center justify-center">
+          <div class="text-black text-[12px] font-bold">
               {article.titles}
             </div>
             <div class="text-black text-[12px]">{article.dates}</div>
@@ -67,8 +67,8 @@ const ArticleDetail = () => {
             alt="تصویر سوم"
             class="w-[366.933px] h-[322px] object-cover rounded-[20px]"
           />
-          <div class="absolute border border-[#d2d2d2] shadow-[0_0_4px_#d2d2d2] bg-[#9ca3af61] rounded-b-[16px] bottom-0 left-0 right-0 h-[61px] bg-[#fafafa73] text-white text-center px-2 rounded flex flex-col items-center justify-center">
-            <div class="text-black text-[12px] font-bold">
+          <div class="absolute border border-borderClr shadow-sm shadow-borderClr rounded-2xl bottom-0 left-0 right-0 h-[61px] bg-[#fafafa73] text-white text-center px-2 rounded flex flex-col items-center justify-center">
+          <div class="text-black text-[12px] font-bold">
               {article.titles}
             </div>
             <div class="text-black text-[12px]">{article.dates}</div>

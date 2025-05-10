@@ -19,15 +19,15 @@ const Header = () => {
             </span>
           </div>
 
-          <nav class="flex items-center border-r h-10 gap-[23px] pr-[20px] border-color-[rgb(211, 216, 223)] mr-8 pr-2 text-gray-700 text-base font-[var(--font-iran]">
+          <nav class="flex items-center border-r h-10 gap-6 pr-5 mr-8 text-gray-700 text-base ">
             <div class="relative group cursor-pointer flex items-center">
-              <span class="text-[#4D5766]hover:text-gray-900">خدمات</span>
+              <span class="text-teXt hover:text-gray-900">خدمات</span>
               <i class="fa-solid fa-chevron-down mr-1 text-[10px]"></i>
             </div>
-            <a href="/" class="hover:text-gray-900 text-[#4D5766]">
+            <a href="/" class="hover:text-gray-900 text-teXt">
               آکادمی حقوق
             </a>
-            <a href="#" class="hover:text-gray-900 text-[#4D5766]">
+            <a href="#" class="hover:text-gray-900 text-teXt">
               بلاگ
             </a>
           </nav>
@@ -36,13 +36,13 @@ const Header = () => {
         <div class="flex items-center gap-2.5 space-x-reverse">
           <button
             type="button"
-            class="bg-[#ff9408] text-[14px] w-[90px] h-[35px] font-extrabold text-gray-900 rounded px-4 py-2 flex items-center justify-center hover:bg-orange-500 transition"
+            class="bg-headerBtt text-[14px] w-[90px] h-[35px] font-extrabold text-gray-900 rounded px-4 py-2 flex items-center justify-center hover:bg-headerBtt transition"
           >
             ورود وکیل
           </button>
           <button
             type="button"
-            class="bg-[#14bc84] text-white text-[14px] w-[90px] h-[35px] font-extrabold rounded px-4 py-2 flex items-center justify-center hover:bg-green-700 transition"
+            class="bg-headerGee text-white text-[14px] w-[90px] h-[35px] font-extrabold rounded px-4 py-2 flex items-center justify-center hover:bg-headerGee transition"
           >
             ورود کاربر
           </button>
