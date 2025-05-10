@@ -1,24 +1,30 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { posts } from "../data/posts";
 
 const Blog = () => {
   const [filter, setFilter] = useState("all");
+  const [showAll, setShowAll] = useState(false);
+
   const navigate = useNavigate();
 
   const filteredPosts =
     filter === "all" ? posts : posts.filter((post) => post.type === filter);
 
-  return (
-    <div className="p-4 max-w-[70rem] mx-auto" dir="rtl">
-      <h1 className="text-center text-xl font-bold my-8">آکادمی حقوق</h1>
+  const displayedPosts = showAll ? filteredPosts : filteredPosts.slice(0, 3);
 
-      <div className="flex flex-wrap gap-4 justify-center my-6">
+  return (
+    <div class="p-4 max-w-[70rem] mx-auto" dir="rtl">
+      <h1 class="text-center text-xl leading-7 font-[inherit] my-8">
+        آکادمی حقوق
+      </h1>
+
+      <div className="flex flex-wrap gap-1 justify-center my-6">
         <button
-          className={`w-[249.067px] h-[57.3333px] rounded-xl shadow flex items-center justify-center ${
+          className={`w-[249.067px] h-[57.3333px] text-base font-normal flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition duration-300 ${
             filter === "article"
               ? "bg-green-500 text-white"
-              : "bg-blue-100 text-blue-800"
+              : "bg-[#E1F0F8] text-[rgb(28,62,117)] hover:bg-[#07b2b2]"
           }`}
           onClick={() => navigate("/articles")}
         >
@@ -26,21 +32,22 @@ const Blog = () => {
         </button>
 
         <button
-          className={`w-[249.067px] h-[57.3333px] rounded-xl shadow flex items-center justify-center ${
+          className={`w-[249.067px] h-[57.3333px] text-base font-normal flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition duration-300 ${
             filter === "video"
-              ? "bg-green-500 text-white"
-              : "bg-blue-100 text-blue-800"
+              ? "bg-blue-950 text-white"
+              : "bg-[#E1F0F8] text-[rgb(28,62,117)] hover:bg-[#07b2b2]"
           }`}
-          onClick={() => setFilter("video")}
+          onClick={() => navigate("/videos")}
         >
-          ویدیو ({posts.filter((p) => p.type === "video").length} مورد)
+          ویدیو ({Math.max(posts.filter((p) => p.type === "video").length, 2)}{" "}
+          مورد)
         </button>
 
         <button
-          className={`w-[249.067px] h-[57.3333px] rounded-xl shadow flex items-center justify-center ${
+          className={`w-[249.067px] h-[57.3333px] text-base font-normal flex items-center justify-center mx-2 rounded-[20px] border border-[rgb(222,240,252)] p-3 shadow transition duration-300 ${
             filter === "podcast"
-              ? "bg-green-500 text-white"
-              : "bg-blue-100 text-blue-800"
+              ? "bg-blue-950 text-white"
+              : "bg-[#E1F0F8] text-[rgb(28,62,117)] hover:bg-[#07b2b2]"
           }`}
           onClick={() => setFilter("podcast")}
         >
@@ -48,38 +55,51 @@ const Blog = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-[60px] justify-center">
-        {filteredPosts.slice(0, 12).map(({ id, image, title, date }) => (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-[60px] justify-center">
+        {displayedPosts.map(({ id, image, title, date }) => (
           <div
             key={id}
             onClick={() => navigate(`/blog/${id}`)}
-            className="rounded-xl overflow-hidden relative w-full max-w-[366px] h-[332px] cursor-pointer shadow hover:shadow-lg transition"
+            class="rounded-xl overflow-hidden relative w-full max-w-[366px] h-[332px] shadow hover:shadow-lg transition"
           >
             <img
               src={image}
               alt={title}
-              className="object-cover w-full h-full rounded-xl"
+              class="object-cover w-full h-full rounded-xl transition duration-300 ease-in-out hover:scale-105 hover:opacity-90"
             />
-            <div className="absolute bottom-0 w-full bg-black bg-opacity-20 text-black p-4 text-center font-bold">
-              {title}
-            </div>
-            <div className="absolute bottom-0 w-full bg-gray-200 bg-opacity-70 text-center text-sm pt-16 pb-4">
-              {date}
-            </div>
+            <Link to={`/blog/${id}`}>
+              <div class="absolute bottom-0 w-full bg-[#9ca3af61] text-center cursor-pointer text-sm pt-2.5 pb-4">
+                <div class="text-black text-[15px] font-bold ">{title}</div>
+                <div>{date}</div>
+              </div>
+            </Link>
           </div>
         ))}
       </div>
 
-      <div className="flex justify-center mt-[45px] gap-2">
-        {[1, 2].map((page) => (
+      {!showAll && filteredPosts.length > 3 && (
+        <div class="flex justify-center mt-10">
           <button
-            key={page}
-            className="px-3 py-1 border rounded hover:bg-gray-300"
+            onClick={() => setShowAll(true)}
+            class="px-6 py-2 bg-blue-950 text-white rounded hover:bg-blue-400 transition"
           >
-            {page}
+            مشاهده بیشتر
           </button>
-        ))}
-      </div>
+        </div>
+      )}
+
+      {showAll && (
+        <div class="flex justify-center mt-[45px] gap-2">
+          {[1, 2].map((page) => (
+            <button
+              key={page}
+              class="px-3 py-1 border rounded hover:bg-gray-300"
+            >
+              {page}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

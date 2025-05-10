@@ -7,38 +7,73 @@ const ArticleDetail = () => {
 
   if (!article) {
     return (
-      <div className="text-center mt-10 text-red-500">مقاله پیدا نشد.</div>
+      <div class="text-center mt-10 text-red-500">مقاله پیدا نشد.</div>
     );
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-4" dir="rtl">
-      {/* <h1 className="text-2xl font-bold mb-4 text-right">{article.titles}</h1> */}
+    <div class="max-w-[60rem] mx-auto p-4 mt-[44px]" dir="rtl">
+      <h1 class="text-[rgb(26,59,112)] font-bold text-[18px] leading-[1.5rem] mb-2 text-right">
+        {article.titles}
+      </h1>
 
-      {/* <p className="text-sm text-gray-500 mb-4 text-right">
-        تاریخ: {article.dates}
-      </p> */}
-
-      <p className="mt-6 text-gray-700 leading-relaxed text-right">
-        {article.content}
+      <p class="mt-6 text-gray-700 leading-[2.1] text-right">
+        {article.contents}
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-        <img
-          src={article.images}
-          alt="تصویر اول"
-          className="w-full h-48 object-cover rounded"
-        />
-        <img
-          src={article.images}
-          alt="تصویر دوم"
-          className="w-full h-48 object-cover rounded"
-        />
-        <img
-          src={article.images}
-          alt="تصویر سوم"
-          className="w-full h-48 object-cover rounded"
-        />
+      <div class="flex justify-start gap-3 text-sm text-gray-500 mb-1 border-b border-gray-300 pb-2 ">
+        <span>نویسنده: {article.authors}</span>
+        <span>تاریخ: {article.dates}</span>
+      </div>
+
+      <p class="text-base leading-[2.1] font-[IRANSansX] text-black mb-4 text-right border-b border-gray-300 pb-2">
+        {article.descriptions}
+      </p>
+      <h2 class="inline-block m-2.5 p-2.5 bg-[#d9dce1] rounded-lg text-sm font-normal text-right ">
+        {article.legalTitles}
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+        <div class="relative ">
+          <img
+            src={article.images}
+            alt="تصویر اول"
+            class="w-[366.933px] h-[322px] object-cover rounded-[20px]"
+          />
+          <div class="absolute border border-[#d2d2d2] shadow-[0_0_4px_#d2d2d2] bg-[#9ca3af61] rounded-b-[16px] bottom-0 left-0 right-0 h-[61px] bg-[#fafafa73] text-white text-center px-2 rounded flex flex-col items-center justify-center">
+            <div class="text-black text-[12px] font-bold">
+              {article.titles}
+            </div>
+            <div class="text-black text-[12px]">{article.dates}</div>
+          </div>
+        </div>
+
+        <div class="relative ">
+          <img
+            src={article.images}
+            alt="تصویر دوم"
+            class="w-[366.933px] h-[322px] object-cover rounded-[20px]"
+          />
+          <div class="absolute bottom-0 border border-[#d2d2d2] shadow-[0_0_4px_#d2d2d2] bg-[#9ca3af61] rounded-b-[16px] left-0 right-0 h-[61px] bg-[#fafafa73] text-white text-center px-2 rounded flex flex-col items-center justify-center">
+            <div class="text-black text-[12px] font-bold">
+              {article.titles}
+            </div>
+            <div class="text-black text-[12px]">{article.dates}</div>
+          </div>
+        </div>
+
+        <div class="relative ">
+          <img
+            src={article.images}
+            alt="تصویر سوم"
+            class="w-[366.933px] h-[322px] object-cover rounded-[20px]"
+          />
+          <div class="absolute border border-[#d2d2d2] shadow-[0_0_4px_#d2d2d2] bg-[#9ca3af61] rounded-b-[16px] bottom-0 left-0 right-0 h-[61px] bg-[#fafafa73] text-white text-center px-2 rounded flex flex-col items-center justify-center">
+            <div class="text-black text-[12px] font-bold">
+              {article.titles}
+            </div>
+            <div class="text-black text-[12px]">{article.dates}</div>
+          </div>
+        </div>
       </div>
     </div>
   );
