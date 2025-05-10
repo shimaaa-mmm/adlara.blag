@@ -30,6 +30,4 @@ body {
 }
 
 /* Example of using the custom text-shadow */
-.custom-text {
-  @apply shadow-text;
-}
+
